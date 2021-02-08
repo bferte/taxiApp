@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, Image, ScrollView, FlatList } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Image, ScrollView, FlatList, TouchableHighlight, TouchableOpacity } from 'react-native';
 
 import cow from './assets/cow.jpg'
 
@@ -129,23 +129,27 @@ const posts = [
 const App = () => {
   const [state, setState] = useState('');
   return (
-    <ScrollView>
+      
       <View style={styles.container}>
-        <Text style={styles.hello}>Hello World</Text>
+        <TouchableHighlight onPress={() => console.log("click 1")}>
+          <Text style={styles.hello}>Hello World</Text>
+        </TouchableHighlight>
         <TextInput
           style={styles.input}
           placeholder="entrer du texte"
           value={state}
           onChangeText={(value) => setState(value)}
         />
-        <Image source={cow} style={styles.cow} />
+        <TouchableOpacity onPress={() => console.log("click 2")}>
+          <Image source={cow} style={styles.cow} />
+        </TouchableOpacity>
         <FlatList 
         data={posts} 
         renderItem={item => <Text style={styles.item}>{item.item.title}</Text>}
         keyExtractor={item => item.id.toString()}
         />
       </View>
-    </ScrollView>
+
   );
 };
 
