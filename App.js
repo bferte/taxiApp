@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, Image, ScrollView, FlatList, TouchableHighlight, TouchableOpacity } from 'react-native';
 
-import { NAvi } 
+import { NavigationContainer } from '@react-navigation/native' 
+import { createStackNavigator } from '@react-navigation/stack'
 
+const Stack = createStackNavigator()
+console.log('Stack', Stack)
 //import cow from './assets/cow.jpg'
-
+//
 const posts = [
   {
     "userId": 1,
