@@ -3,14 +3,18 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 
 const WelcomeScreen = (props) => {
     const goTo = () => {
-        console.log('props', props);
+        //console.log('props', props);
+        props.navigation.navigate('Login', {
+            nom: "Bri",
+            age: 31
+        });
     }
     return (
         <View style={styles.container}>
             <Text>Welcome Screen</Text>
             <TouchableOpacity onPress={goTo}>
                 <View style={styles.button}>
-                    <Text>Aller à Home</Text>
+                    <Text>Aller à Login</Text>
                 </View>
             </TouchableOpacity>
         </View>

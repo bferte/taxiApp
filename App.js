@@ -6,8 +6,17 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import WelcomeScreen from './screens/WelcomeScreen'
 import LoginScreen from './screens/LoginScreen'
+import HomeScreen from './screens/HomeScreen'
+import ProfileScreen from './screens/ProfileScreen'
 
 const {Navigator, Screen} = createStackNavigator()
+
+const Root = () => (
+  <Navigator>
+    <Screen name="Home" component={HomeScreen} />
+    <Screen name="Profile" component={ProfileScreen} />
+  </Navigator>
+)
 
 
 const App = () => {
@@ -17,6 +26,7 @@ const App = () => {
       <Navigator>
         <Screen name="Welcome" component={WelcomeScreen} />
         <Screen name="Login" component={LoginScreen} />
+        <Screen name="Root" component={Root} />
       </Navigator>
     </NavigationContainer>
 
