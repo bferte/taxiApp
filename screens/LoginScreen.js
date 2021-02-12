@@ -9,8 +9,11 @@ const LoginScreen = props => {
     // }, [])
     const goTo = () => {
         props.navigation.navigate("Root", {
-            params: {},
-            screen: "Profile"
+            params: {
+                celibtaire: true,
+                frameworks: ["React","Angular","Meteor"]
+            },
+            screen: "Home"
         });
     }
 
